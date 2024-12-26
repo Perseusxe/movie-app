@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./_components/footer";
-import { FilmIcon } from "lucide-react";
+import { Header } from "./_components/header";
+import { ArrowRight } from "lucide-react";
+import { Stars } from "lucide-react";
  
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased;`}
       >
-        <header className=" bg-[#09090B]">
-          <FilmIcon className="stroke-indigo-700 outline-[0px]"/>
+        <header>
+        <Header />
         </header>
         <main className="min-h-screen  bg-[#09090B] text-foreground">
-          {" "}
-          {children}{" "}
+          {children}
         </main>
         <Footer />
       </body>

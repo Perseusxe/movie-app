@@ -1,6 +1,5 @@
 import { FilmIcon } from "lucide-react";
 import { Email } from "./email";
-import { MovieIcon } from "./MovieIcon";
 import { Phone } from "./phone";
 
 export const Footer = () => {

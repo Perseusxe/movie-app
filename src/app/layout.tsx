@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";
-import { ArrowRight } from "lucide-react";
-import { Stars } from "lucide-react";
  
 const geistSans = Geist({
   variable: "--font-geist-sans",

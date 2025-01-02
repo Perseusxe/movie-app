@@ -1,5 +1,7 @@
 import { ArrowRight, Link2 } from "lucide-react";
 import Link from "next/link";
+import { Star } from "lucide-react";
+import { options } from '@/constants/api'
 
 export const API_KEY = "f39690f9830ce804b7894ac1def4f7e9";
 
@@ -17,6 +19,7 @@ export type Movie = {
   overview: string;
   poster_path: string;
   release_date: string;
+  vote_average: number;
 };
 const Card = ({ movie }: { movie: Movie }) => {
   return <div></div>;
@@ -42,10 +45,10 @@ export async function Movies({
           {title}
         </h2>
         <Link href={`/${endpoint}`}>
-        <div className="flex items-center">
-          <h4 className="text-[white] font-[500] text-[14px]">See More</h4>
-          <ArrowRight className="stroke-[white] w-[18px] h-[18px]" />
-        </div>
+          <div className="flex items-center">
+            <h4 className="text-[white] font-[500] text-[14px]">See More</h4>
+            <ArrowRight className="stroke-[white] w-[18px] h-[18px]" />
+          </div>
         </Link>
       </div>
       <div className="p-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
@@ -56,6 +59,11 @@ export async function Movies({
               className="rounded-t-lg"
             />
             <div className="h-[76px] font-sans">
+            <div className="flex">
+              <Star className="fill-[White]"/>
+                <div className="text-[white]">{movie.vote_average.toFixed(1)}</div>
+               <p className="text-[#A1A1AA]">/10</p>
+              </div>
               <div className="text-[#FAFAFA]">{movie.title}</div>
             </div>
           </div>
